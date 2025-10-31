@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SPlayDforT — Solo Shooter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SPlayDforT</h1>
+  </header>
+
+  <main class="wrap">
+    <section class="game-area">
+      <div class="top-bar">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="lives">Lives: <span id="lives">3</span></div>
+      </div>
+
+      <canvas id="gameCanvas" width="720" height="480"></canvas>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="center">
+          <h2 id="endTitle">Game Over</h2>
+          <p>Your score: <span id="finalScore">0</span></p>
+          <button id="restartBtn">Restart</button>
+        </div>
+      </div>
+
+      <!-- Mobile controls -->
+      <div class="mobile-controls">
+        <button id="leftBtn" class="control">◀</button>
+        <button id="shootBtn" class="control shoot">●</button>
+        <button id="rightBtn" class="control">▶</button>
+      </div>
+    </section>
+
+    <aside class="ad-column">
+      <!-- Placeholder ad area. Replace with your AdSense / ad code later -->
+      <div class="ad-box" id="adBox">
+        <div class="ad-text">AD SPACE</div>
+        <small>Replace this with AdSense or ad network code</small>
+      </div>
+
+      <div class="info">
+        <p>Tip: On mobile the ad moves below the game.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© SPlayDforT — Simple solo shooter</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

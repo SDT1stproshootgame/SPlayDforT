@@ -1,0 +1,70 @@
+:root{
+  --bg:#0b1020;
+  --panel:#0f1724;
+  --accent:#3ec1ff;
+  --muted:#9aa7bd;
+  --white:#ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#061021,#081226);color:var(--white)}
+
+header{padding:12px 16px;text-align:center}
+header h1{margin:0;font-size:20px;letter-spacing:1px}
+
+.wrap{
+  display:flex;
+  gap:12px;
+  padding:10px;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+/* Game area */
+.game-area{
+  background:var(--panel);
+  border-radius:10px;
+  padding:10px;
+  width:100%;
+  max-width:820px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+  position:relative;
+}
+
+.top-bar{display:flex;justify-content:space-between;padding:6px 8px}
+.top-bar .score, .top-bar .lives{font-size:14px;color:var(--muted)}
+
+canvas{display:block;border-radius:6px;background:#02101a;width:100%;height:auto;max-height:70vh}
+
+/* overlay */
+.overlay{
+  position:absolute;inset:50px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.overlay .center{background:rgba(3,6,12,0.8);padding:18px;border-radius:10px;text-align:center;pointer-events:auto}
+.overlay.hidden{display:none}
+
+button{cursor:pointer;border:0;padding:10px 14px;border-radius:8px;background:var(--accent);color:#012630;font-weight:600}
+button:active{transform:translateY(1px)}
+
+/* Side ad column */
+.ad-column{width:260px;min-width:220px;display:flex;flex-direction:column;gap:12px}
+.ad-box{background:linear-gradient(180deg,#0b2840,#08314a);padding:12px;border-radius:8px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px dashed rgba(255,255,255,0.06)}
+.ad-text{font-size:20px;font-weight:700;letter-spacing:1px}
+
+.info{font-size:12px;color:var(--muted);background:rgba(255,255,255,0.02);padding:8px;border-radius:6px}
+
+/* mobile controls */
+.mobile-controls{display:none;gap:10px;justify-content:center;margin-top:10px}
+.mobile-controls .control{padding:12px 16px;border-radius:8px;background:rgba(255,255,255,0.06);color:var(--white);font-size:18px}
+.mobile-controls .shoot{background:rgba(62,193,255,0.12)}
+
+/* layout responsive */
+@media (max-width:900px){
+  .wrap{flex-direction:column;align-items:center}
+  .ad-column{width:100%;max-width:820px}
+  .mobile-controls{display:flex}
+  .ad-column{order:2}
+  .game-area{order:1}
+}
+footer{text-align:center;color:var(--muted);padding:12px 6px;font-size:12px}
